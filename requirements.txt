@@ -1,0 +1,4 @@
+click>=5.1
+future>=0.15.2
+chardet>=2.3.0
+janome>=0.2.6
