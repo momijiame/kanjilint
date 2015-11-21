@@ -1,14 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import os
-
 from setuptools import setup
 from setuptools import find_packages
 
 
 def _load_requires_from_file(filepath):
-    return [pkg_name.rstrip(os.linesep)
+    return [pkg_name.rstrip('\n')
             for pkg_name in open(filepath).readlines()]
 
 
