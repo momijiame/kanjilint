@@ -8,7 +8,7 @@
 
 Python のパッケージマネージャ PIP を使ってインストールします。
 ```
-$ pip install https://github.com/momijiame/kanjilint.git
+$ pip install git+https://github.com/momijiame/kanjilint.git
 ```
 
 ## 使い方
