@@ -50,8 +50,7 @@ def _detect(text, filepath, _encoding):
     violations = api.detect(text)
     for violation in violations:
         msg = u'{filename}:{lineno}:{pos}:{line}'.format(
-            # FIXME: ファイル名ではなく今のディレクトリからの相対パスが出したい
-            filename=os.path.basename(filepath),
+            filename=os.path.relpath(filepath),
             lineno=violation.lineno,
             pos=violation.position,
             line=violation.line,
