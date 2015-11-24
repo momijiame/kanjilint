@@ -43,36 +43,12 @@ def get_encoding(filepath):
 
 
 def _get_encoding(binary):
-    # いくつかの文字コードに当たりをつけて総当りで調べる
-    encoding = _get_encoding_brute_force(binary)
-    if encoding is not None:
-        return encoding
-
     # 文字コード検出ライブラリを使ってちゃんと調べる
     encoding = _get_encoding_chardet(binary)
     if encoding is not None:
         return encoding
 
     # それでも分からなかったらお手上げ (きっとバイナリ)
-    return None
-
-
-def _get_encoding_brute_force(binary):
-    encodings = [
-        'ascii',
-        'utf-8',
-        'euc-jp',
-        'cp932',
-        'iso-2022-jp',
-    ]
-
-    for encoding in encodings:
-        try:
-            binary.decode(encoding)
-        except UnicodeDecodeError:
-            continue
-        return encoding
-
     return None
 
 
